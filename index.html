@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Ejecutiva Redek - Niubox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+        }
+        h1, h2, h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        .mckinsey-blue { color: #051c2c; }
+        .bg-mckinsey-blue { background-color: #051c2c; }
+        .redek-accent { color: #0055ff; }
+        .bg-redek-accent { background-color: #0055ff; }
+        
+        .section-divider {
+            border-top: 1px solid #e5e7eb;
+            margin-top: 4rem;
+            padding-top: 4rem;
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, #fcfcfc 0%, #ffffff 100%);
+        }
+        .logo-container {
+            background-color: #112146;
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 0 0 1rem 1rem;
+        }
+        .month-card {
+            background: #f8fafc;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            border: 1px solid #e2e8f0;
+        }
+        .week-item {
+            position: relative;
+            padding-left: 2rem;
+            padding-bottom: 2rem;
+            border-left: 2px solid #e2e8f0;
+        }
+        .week-item:last-child { padding-bottom: 0; }
+        .week-dot {
+            position: absolute;
+            left: -0.45rem;
+            top: 0;
+            width: 0.75rem;
+            height: 0.75rem;
+            background: #cbd5e1;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+        .week-item:hover .week-dot {
+            background: #0055ff;
+        }
+        .legal-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        th { text-align: left; padding: 1rem; border-bottom: 2px solid #e2e8f0; font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; }
+        td { padding: 1.25rem 1rem; border-bottom: 1px solid #f1f5f9; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Hero -->
+    <section class="min-h-screen flex flex-col justify-between hero-gradient">
+        <div class="px-8 py-0 md:px-24">
+            <div class="logo-container mb-20 shadow-lg">
+                <img src="https://redek.co/images/Recurso-4-p-500.png" alt="Redek Logo" class="h-10">
+            </div>
+            
+            <div class="max-w-4xl">
+                <p class="text-redek-accent font-bold tracking-[0.2em] uppercase text-sm mb-4">Consultoría Estratégica LegalTech</p>
+                <h1 class="text-5xl md:text-7xl font-extrabold mckinsey-blue leading-tight mb-8">
+                    Automatización del Monitoreo <br>Regulatorio y Legislativo
+                </h1>
+                <p class="text-xl text-slate-500 max-w-2xl leading-relaxed">
+                    Ingeniería legal diseñada para Niubox Colombia: Vigilancia automatizada de fuentes oficiales mediante implementación de IA y scraping de alta precisión.
+                </p>
+            </div>
+        </div>
+
+        <div class="px-8 pb-12 md:px-24 md:pb-20">
+            <div class="flex flex-col md:flex-row md:items-end justify-between border-t border-slate-200 pt-8 mt-12">
+                <div class="space-y-1">
+                    <p class="text-xs uppercase tracking-widest text-slate-400 font-bold">Preparado para</p>
+                    <p class="text-xl font-bold mckinsey-blue">Niubox Colombia</p>
+                </div>
+                <div class="space-y-1 mt-6 md:mt-0 text-right">
+                    <p class="text-xs uppercase tracking-widest text-slate-400 font-bold">Fecha de Emisión</p>
+                    <p class="text-xl font-bold mckinsey-blue">Febrero, 2026</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-5xl mx-auto px-8 py-24">
+        
+        <!-- Modelo de Negocio y Propiedad -->
+        <section id="modelo-negocio" class="space-y-12">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="col-span-1">
+                    <h2 class="text-sm font-black uppercase tracking-[0.3em] text-redek-accent mb-4">Modelo de Negocio</h2>
+                    <p class="text-2xl font-bold mckinsey-blue leading-tight">Propiedad y Gobernanza</p>
+                </div>
+                <div class="col-span-2 space-y-6">
+                    <div class="legal-box border-l-4 border-l-redek-accent">
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            El desarrollo se rige bajo un esquema de <strong>Licencia No-Comercial Exclusiva</strong> a favor de Niubox Colombia. Esto garantiza que Niubox cuenta con el derecho de uso exclusivo de la herramienta para su operación interna y atención de clientes.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed">
+                            Se establece un <strong>derecho de preferencia</strong> a favor de REDEK para todas las labores técnicas de operación, soporte, mantenimiento y actualizaciones futuras, asegurando la integridad tecnológica del sistema a largo plazo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solución Técnica -->
+        <section class="section-divider">
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div class="col-span-1">
+                    <h2 class="text-sm font-black uppercase tracking-[0.3em] text-redek-accent mb-4">Solución</h2>
+                    <p class="text-2xl font-bold mckinsey-blue leading-tight">Alcance de la Solución Técnica</p>
+                </div>
+                <div class="col-span-2">
+                    <p class="text-slate-500 mb-8">Arquitectura de vigilancia automatizada diseñada para capturar, procesar y alertar sobre cambios críticos en el entorno normativo colombiano.</p>
+                    <div class="grid md:grid-cols-2 gap-6 text-sm">
+                        <div class="p-6 bg-slate-50 rounded-lg">
+                            <h4 class="font-bold mckinsey-blue mb-2">Fuentes de Scraping</h4>
+                            <ul class="text-slate-600 space-y-2">
+                                <li>• Normogramas del Estado (SUIP/Sectoriales)</li>
+                                <li>• Gacetas Oficiales y Diario Oficial</li>
+                                <li>• Alertas de Google Noticias (Vigilancia de mercado)</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 bg-slate-50 rounded-lg">
+                            <h4 class="font-bold mckinsey-blue mb-2">Motor de Inteligencia</h4>
+                            <ul class="text-slate-600 space-y-2">
+                                <li>• Match Temático mediante implementación de IA</li>
+                                <li>• Alertas automáticas vía correo electrónico</li>
+                                <li>• Dashboard administrativo centralizado</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cronograma Expandido -->
+        <section class="section-divider">
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div class="col-span-1">
+                    <h2 class="text-sm font-black uppercase tracking-[0.3em] text-redek-accent mb-4">Tiempos</h2>
+                    <p class="text-2xl font-bold mckinsey-blue leading-tight">Plan de Trabajo Detallado</p>
+                </div>
+                <div class="col-span-2 space-y-12">
+                    
+                    <!-- MES 1 -->
+                    <div class="month-card">
+                        <h3 class="text-redek-accent font-extrabold mb-8 flex items-center text-lg">
+                            <span class="bg-redek-accent text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">01</span>
+                            MES 1: Ingeniería de Datos e Implementación IA
+                        </h3>
+                        
+                        <div class="space-y-2">
+                            <div class="week-item">
+                                <div class="week-dot"></div>
+                                <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">Semana 1: Diagnóstico de Fuentes</h4>
+                                <p class="text-sm font-bold mckinsey-blue mb-2">Mapeo y Arquitectura de Datos</p>
+                                <ul class="text-xs text-slate-500 space-y-1 list-disc pl-4">
+                                    <li>Identificación de endpoints técnicos en SUIP y Diario Oficial.</li>
+                                    <li>Definición de estructura de base de datos para almacenamiento de normas.</li>
+                                    <li>Configuración de entorno de nube (Servidores y BD).</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="week-item">
+                                <div class="week-dot"></div>
+                                <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">Semana 2: Desarrollo de Scrapers</h4>
+                                <p class="text-sm font-bold mckinsey-blue mb-2">Extracción Automatizada Core</p>
+                                <ul class="text-xs text-slate-500 space-y-1 list-disc pl-4">
+                                    <li>Construcción de bots de scraping para Normogramas y Gacetas.</li>
+                                    <li>Implementación de sistemas de limpieza de texto (Parsing de PDF a texto plano).</li>
+                                    <li>Protocolos de re-intento ante caídas de sitios gubernamentales.</li>
+                                </ul>
+                            </div>
+
+                            <div class="week-item">
+                                <div class="week-dot"></div>
+                                <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">Semana 3: Orquestación de IA</h4>
+                                <p class="text-sm font-bold mckinsey-blue mb-2">Implementación de Lógica Cognitiva</p>
+                                <ul class="text-xs text-slate-500 space-y-1 list-disc pl-4">
+                                    <li>Configuración de APIs de IA para procesamiento de lenguaje natural.</li>
+                                    <li>Desarrollo del algoritmo de "Match Temático" basado en perfiles de cliente.</li>
+                                    <li>Integración con Google News API para monitoreo de prensa.</li>
+                                </ul>
+                            </div>
+
+                            <div class="week-item">
+                                <div class="week-dot"></div>
+                                <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">Semana 4: Pruebas de Ingesta</h4>
+                                <p class="text-sm font-bold mckinsey-blue mb-2">Validación de Datos Base</p>
+                                <ul class="text-xs text-slate-500 space-y-1 list-disc pl-4">
+                                    <li>Ajuste de precisión en el emparejamiento de normas por etiquetas.</li>
+                                    <li>Optimización de velocidad de lectura de archivos oficiales.</li>
+                                    <li>Primer reporte de prueba generado internamente.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MES 2 -->
+                    <div class="month-card">
+                        <h3 class="text-redek-accent font-extrabold mb-8 flex items-center text-lg">
+                            <span class="bg-redek-accent text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">02</span>
+                            MES 2: Plataforma Administrativa y Go-Live
+                        </h3>
+                        
+                        <div class="space-y-2">
+                            <div class="week-item">
+                                <div class="week-dot"></div>
+                                <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">Semana 5: Desarrollo de Interfaz</h4>
+                                <p class="text-sm font-bold mckinsey-blue mb-2">Consola de Administración (Backend)</p>
+                                <ul class="text-xs text-slate-500 space-y-1 list-disc pl-4">
+                                    <li>Panel para gestión de clientes y palabras clave (Keywords).</li>
+                                    <li>Visualizador de historial de alertas emitidas.</li>
+                                    <li>Configuración de usuarios administradores de Niubox.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="week-item">
+                                <div class="week-dot"></div>
+                                <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">Semana 6: Sistema de Notificaciones</h4>
+                                <p class="text-sm font-bold mckinsey-blue mb-2">Motor de Correo y Reportes</p>
+                                <ul class="text-xs text-slate-500 space-y-1 list-disc pl-4">
+                                    <li>Diseño de plantillas de correo automatizadas.</li>
+                                    <li>Configuración de frecuencia de alertas (Inmediatas vs. Semanales).</li>
+                                    <li>Integración con servicio de despacho de emails masivos.</li>
+                                </ul>
+                            </div>
+
+                            <div class="week-item">
+                                <div class="week-dot"></div>
+                                <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">Semana 7: Control de Calidad</h4>
+                                <p class="text-sm font-bold mckinsey-blue mb-2">User Acceptance Testing (UAT)</p>
+                                <ul class="text-xs text-slate-500 space-y-1 list-disc pl-4">
+                                    <li>Periodo de pruebas con el equipo legal de Niubox.</li>
+                                    <li>Ajuste de filtros de IA para reducir "ruido" en las alertas.</li>
+                                    <li>Refinamiento de experiencia de usuario en el Dashboard.</li>
+                                </ul>
+                            </div>
+
+                            <div class="week-item">
+                                <div class="week-dot"></div>
+                                <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">Semana 8: Despliegue Final</h4>
+                                <p class="text-sm font-bold mckinsey-blue mb-2">Lanzamiento a Producción</p>
+                                <ul class="text-xs text-slate-500 space-y-1 list-disc pl-4">
+                                    <li>Migración a entorno final de producción.</li>
+                                    <li>Capacitación del equipo administrativo.</li>
+                                    <li>Activación de monitoreo 24/7 y soporte de operación.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Inversión y Formas de Pago -->
+        <section class="section-divider">
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div class="col-span-1">
+                    <h2 class="text-sm font-black uppercase tracking-[0.3em] text-redek-accent mb-4">Inversión</h2>
+                    <p class="text-2xl font-bold mckinsey-blue leading-tight">Estructura de Costos (COP)</p>
+                </div>
+                <div class="col-span-2">
+                    <table class="mb-12">
+                        <thead>
+                            <tr>
+                                <th>Concepto</th>
+                                <th>Frecuencia</th>
+                                <th class="text-right">Inversión</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="font-bold mckinsey-blue block">Desarrollo y Licencia Exclusiva</span>
+                                    <span class="text-xs text-slate-400">Setup inicial, scrapers e implementación de IA avanzada</span>
+                                </td>
+                                <td>Pago Único</td>
+                                <td class="text-right font-bold">$ 8.000.000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3 class="font-bold mckinsey-blue mb-4">Opciones de Operación (Contrato a 12 Meses)</h3>
+                    <p class="text-sm text-slate-500 mb-6">
+                        Redek asume la responsabilidad total de infraestructura, disponibilidad del servicio, costos de API/Tokens de IA y mantenimiento de scrapers.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="p-8 border border-slate-200 rounded-xl hover:border-redek-accent transition-colors cursor-default">
+                            <h4 class="font-bold text-xs uppercase tracking-widest text-slate-400 mb-2">Opción Mensual</h4>
+                            <p class="text-3xl font-extrabold mckinsey-blue mb-1">$ 1.500.000</p>
+                            <p class="text-xs text-slate-500 font-medium italic">COP / mes</p>
+                            <div class="mt-4 pt-4 border-t border-slate-100 text-[11px] text-slate-400">
+                                Pago recurrente por 12 meses.
+                            </div>
+                        </div>
+                        <div class="p-8 bg-mckinsey-blue rounded-xl relative overflow-hidden shadow-xl">
+                            <div class="absolute top-4 right-4 bg-redek-accent text-white text-[10px] px-2 py-1 rounded font-bold uppercase tracking-widest">Descuento Anual</div>
+                            <h4 class="font-bold text-xs uppercase tracking-widest text-slate-300 mb-2">Pago Anual Anticipado</h4>
+                            <p class="text-3xl font-extrabold text-white mb-1">$ 14.500.000</p>
+                            <p class="text-xs text-slate-400 font-medium italic">COP / año</p>
+                            <div class="mt-4 pt-4 border-t border-slate-700 text-[11px] text-slate-400">
+                                Equivalente a $1.208.333/mes.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-100 py-16 px-8">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] font-bold text-slate-400 tracking-[0.2em] uppercase space-y-4 md:space-y-0 text-center md:text-left">
+            <div>Redek • Ingeniería Legal • 2026</div>
+            <div>Bogotá, Colombia • nicolas@redek.co</div>
+            <div class="text-redek-accent">Innovación • ODR • IA</div>
+        </div>
+    </footer>
+
+</body>
+</html>
