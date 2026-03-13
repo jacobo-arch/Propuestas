@@ -1,261 +1,339 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propuesta Ejecutiva Redek - Cámara de Comercio de Cartagena</title>
+    <title>Propuesta Técnica Redek - Automatización de Laboratorio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        redek: {
+                            blue: '#112146',
+                            accent: '#0055ff',
+                            light: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #1a1a1a;
+        .premium-border {
+            border-radius: 2px;
         }
-        h1, h2, h3, h4 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            letter-spacing: -0.02em;
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
         }
-        .redek-navy { color: #112146; }
-        .bg-redek-navy { background-color: #112146; }
-        .accent-gold { color: #c5a059; } 
-        
-        .section-divider {
-            border-top: 1px solid #f1f5f9;
-            margin-top: 5rem;
-            padding-top: 5rem;
-        }
-        .hero-bg {
-            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-        }
-        .logo-box {
-            background-color: #112146;
-            display: inline-block;
-            padding: 1.5rem 2.5rem;
-            border-radius: 0 0 0.5rem 0.5rem;
-        }
-        
-        /* Cronograma Estilizado */
-        .timeline-wrapper {
-            position: relative;
-            padding-left: 2rem;
-        }
-        .timeline-track {
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: #f1f5f9;
-        }
-        .timeline-indicator {
-            position: absolute;
-            left: -5px;
-            width: 12px;
-            height: 12px;
-            background-color: #112146;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            box-shadow: 0 0 0 4px #f1f5f9;
-        }
-        
-        .month-label {
-            display: inline-block;
-            background: #112146;
-            color: white;
-            font-size: 10px;
-            font-weight: 800;
-            padding: 4px 12px;
-            border-radius: 20px;
+
+        th {
+            text-align: left;
+            border-bottom: 2px solid #112146;
+            padding: 12px;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            margin-bottom: 1.5rem;
+            color: #64748b;
         }
 
-        .pipeline-card {
-            background: #ffffff;
-            border: 1px solid #f1f5f9;
-            transition: all 0.3s ease;
+        td {
+            padding: 16px 12px;
+            border-bottom: 1px solid #f1f5f9;
+            color: #1e293b;
+            font-size: 0.9rem;
         }
-        
-        table { width: 100%; border-collapse: collapse; }
-        th { text-align: left; padding: 1.25rem 1rem; border-bottom: 2px solid #112146; font-size: 0.7rem; font-weight: 800; color: #112146; text-transform: uppercase; letter-spacing: 0.1em; }
-        td { padding: 1.5rem 1rem; border-bottom: 1px solid #f1f5f9; font-size: 0.9rem; }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .section-number {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1;
+            opacity: 0.1;
+            font-family: 'Plus Jakarta Sans';
+        }
+
+        .tech-badge {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-right: 4px;
+            margin-bottom: 4px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .req-card {
+            border-left: 3px solid #0055ff;
+        }
     </style>
 </head>
-<body class="antialiased">
 
-    <header class="px-8 md:px-24">
-        <div class="logo-box shadow-sm">
-            <img src="https://redek.co/images/Recurso-4-p-500.png" alt="Redek Logo" class="h-8">
+<body class="bg-white text-slate-900 leading-relaxed font-sans">
+
+    <!-- Header -->
+    <header
+        class="py-6 px-8 md:px-20 flex justify-between items-center bg-white sticky top-0 z-50 border-b border-slate-100">
+        <img src="https://redek.co/images/Recurso-4-p-500.png" alt="Redek Logo" class="h-10"
+            onerror="this.src='https://via.placeholder.com/150x50?text=REDEK'">
+        <div class="text-[10px] font-bold tracking-[0.2em] text-redek-blue uppercase">
+            Uso Interno • Documentación Técnica • Rev. 04-2026
         </div>
     </header>
 
-    <section class="hero-bg px-8 py-20 md:px-24 md:py-32">
-        <div class="max-w-6xl mx-auto">
-            <p class="text-xs font-black uppercase tracking-[0.4em] text-slate-400 mb-6">Legal Engineering & AI Integration</p>
-            <h1 class="text-5xl md:text-7xl font-extrabold redek-navy leading-none mb-8">
-                Eficiencia Procesal: <br><span class="text-slate-400">Autodiagnóstico Documental.</span>
-            </h1>
-            <p class="text-xl text-slate-500 leading-relaxed max-w-3xl">
-                Desarrollo de un ecosistema de validación algorítmica para la Cámara de Comercio de Cartagena bajo modelo de fábrica de software especializado.
-            </p>
-        </div>
-    </section>
-
-    <main class="max-w-6xl mx-auto px-8 py-24">
-
-        <!-- Estrategia -->
-        <section class="grid md:grid-cols-3 gap-20">
-            <div>
-                <h2 class="text-xs font-black uppercase tracking-[0.3em] redek-navy mb-6">01. Visión</h2>
-                <p class="text-2xl font-bold redek-navy leading-tight mb-4">Software Delivery & Handover</p>
-            </div>
-            <div class="md:col-span-2 space-y-8 text-slate-600">
-                <p class="text-lg leading-relaxed">
-                    Operamos bajo un esquema de <strong>Fábrica de Software (Software Factory)</strong>. Redek asume la carga técnica de diseño, arquitectura y desarrollo, entregando un producto final documentado y listo para ser operado y escalado por el equipo de IT de la Cámara de Comercio de Cartagena.
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-gradient py-24 px-8 md:px-20 border-b border-slate-50">
+            <div class="max-w-4xl">
+                <h4 class="text-redek-accent font-bold text-xs uppercase tracking-widest mb-4">Ingeniería y
+                    Transformación Digital</h4>
+                <h1 class="text-5xl md:text-6xl font-display font-extrabold text-redek-blue mb-8 leading-tight">
+                    Arquitectura de Automatización de Informes Técnicos.
+                </h1>
+                <p class="text-xl text-slate-600 font-light max-w-2xl">
+                    Ecosistema basado en <strong>Google Cloud Platform</strong> y <strong>Vertex AI</strong> para la
+                    integración de datos LIMS, visión computacional y redacción técnica asistida.
                 </p>
             </div>
         </section>
 
-        <!-- Ingeniería Visual -->
-        <section class="section-divider">
-            <div class="grid md:grid-cols-3 gap-20">
+        <!-- Comparativa Multidimensional -->
+        <section class="py-20 px-8 md:px-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h2 class="text-xs font-black uppercase tracking-[0.3em] redek-navy mb-6">02. Ingeniería</h2>
-                    <p class="text-2xl font-bold redek-navy leading-tight">Flujo de Análisis</p>
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">Análisis de Capacidades
+                    </h2>
+                    <h3 class="text-3xl font-display text-redek-blue mb-6">Impacto Multidimensional</h3>
+                    <p class="text-slate-600 mb-6">
+                        La implementación de este ecosistema desplaza el esfuerzo operativo desde la transcripción
+                        manual hacia la validación experta, incrementando la precisión y escalabilidad de la entrega.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-redek-accent"></div>
+                            <span class="text-sm font-semibold">Trazabilidad total mediante logs de auditoría en Cloud
+                                Run.</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-redek-accent"></div>
+                            <span class="text-sm font-semibold">Interpretación normativa automatizada con Gemini.</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-redek-accent"></div>
+                            <span class="text-sm font-semibold">Colaboración técnica en tiempo real vía Google Docs
+                                SDK.</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="md:col-span-2">
-                    <div class="bg-slate-50 p-8 md:p-12 rounded-2xl border border-slate-100">
-                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
-                            <div class="pipeline-card p-5 rounded-xl shadow-sm text-center">
-                                <div class="text-[10px] font-black uppercase redek-navy mb-2">Ingesta</div>
-                                <p class="text-[9px] text-slate-400 italic">Carga de Documentos</p>
-                            </div>
-                            <div class="pipeline-card p-5 rounded-xl shadow-sm text-center">
-                                <div class="text-[10px] font-black uppercase redek-navy mb-2">Parsing</div>
-                                <p class="text-[9px] text-slate-400 italic">Extracción de Texto</p>
-                            </div>
-                            <div class="pipeline-card p-5 rounded-xl shadow-sm text-center border-2 border-slate-200">
-                                <div class="text-[10px] font-black uppercase redek-navy mb-2">Matching</div>
-                                <p class="text-[9px] text-slate-400 italic">Cotejo vs Estándar</p>
-                            </div>
-                            <div class="pipeline-card p-5 rounded-xl shadow-sm text-center bg-redek-navy">
-                                <div class="text-[10px] font-black uppercase text-white mb-2">Reporte</div>
-                                <p class="text-[9px] text-slate-300 italic">Diagnóstico Final</p>
-                            </div>
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 flex justify-center">
+                    <div class="w-full max-w-md">
+                        <canvas id="capabilityRadarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ecosistema Tecnológico y Requerimientos -->
+        <section class="py-24 px-8 md:px-20 bg-white">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6 text-center">Desglose de
+                Componentes</h2>
+            <h3 class="text-3xl font-display text-redek-blue mb-16 text-center">Ecosistema y Requerimientos Funcionales
+            </h3>
+
+            <div class="space-y-16">
+                <!-- 1. ETL Bridge -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                    <div class="md:col-span-4">
+                        <div class="section-number text-redek-blue opacity-10">01</div>
+                        <h4 class="text-2xl font-display text-redek-blue mt-[-2rem] mb-4">Módulo ETL Bridge</h4>
+                        <div class="flex flex-wrap mb-4">
+                            <span class="tech-badge">Python 3.11</span>
+                            <span class="tech-badge">Cloud Run</span>
+                            <span class="tech-badge">SQLAlchemy</span>
+                        </div>
+                        <p class="text-slate-500 text-sm">Capa de integración encargada del flujo de datos entre
+                            sistemas legados (Sample/LIMS) y el entorno de procesamiento.</p>
+                    </div>
+                    <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
+                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Sincronización SQL</h6>
+                            <p class="text-xs text-slate-600">Conexión automatizada a la DB de laboratorio para
+                                extracción de parámetros fisicoquímicos en intervalos definidos.</p>
+                        </div>
+                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
+                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Normalización ETL</h6>
+                            <p class="text-xs text-slate-600">Conversión de unidades técnicas y limpieza de registros
+                                inconsistentes previa a la ingesta analítica.</p>
+                        </div>
+                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
+                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Parsing de PDFs</h6>
+                            <p class="text-xs text-slate-600">Extracción de tablas y metadatos de archivos PDF de
+                                laboratorio mediante bibliotecas de análisis estructural.</p>
+                        </div>
+                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
+                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Trazabilidad Legal</h6>
+                            <p class="text-xs text-slate-600">Generación de logs de auditoría detallados por cada
+                                registro capturado para asegurar la cadena de custodia del dato.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Motor de Visión -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start border-t border-slate-100 pt-16">
+                    <div class="md:col-span-4">
+                        <div class="section-number text-redek-blue opacity-10">02</div>
+                        <h4 class="text-2xl font-display text-redek-blue mt-[-2rem] mb-4">Motor de Visión e Ingesta</h4>
+                        <div class="flex flex-wrap mb-4">
+                            <span class="tech-badge">Google Cloud Vision</span>
+                            <span class="tech-badge">Gemini</span>
+                            <span class="tech-badge">Vertex AI</span>
+                        </div>
+                        <p class="text-slate-500 text-sm">Procesamiento de registros visuales de campo para convertirlos
+                            en datos estructurados mediante modelos multimodales.</p>
+                    </div>
+                    <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
+                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">OCR Multimodal</h6>
+                            <p class="text-xs text-slate-600">Identificación de valores en pantallas de equipos (pH,
+                                oxímetros) mediante análisis de contexto visual con LLMs.</p>
+                        </div>
+                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
+                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Puntaje de Confianza</h6>
+                            <p class="text-xs text-slate-600">Asignación de métricas de fiabilidad a la extracción;
+                                activación automática de validación humana en umbrales bajos.</p>
+                        </div>
+                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
+                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Extracción Geográfica</h6>
+                            <p class="text-xs text-slate-600">Validación de metadatos EXIF y coordenadas para confirmar
+                                la ubicación exacta de la toma de muestra.</p>
+                        </div>
+                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
+                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Gestión de Medios</h6>
+                            <p class="text-xs text-slate-600">Almacenamiento y vinculación automática de fotografías al
+                                punto de monitoreo correspondiente en Cloud Storage.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Cerebro Analítico -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start border-t border-slate-100 pt-16">
+                    <div class="md:col-span-4">
+                        <div class="section-number text-redek-blue opacity-10">03</div>
+                        <h4 class="text-2xl font-display text-redek-blue mt-[-2rem] mb-4">Cerebro e Integración Suite
+                        </h4>
+                        <div class="flex flex-wrap mb-4">
+                            <span class="tech-badge">Gemini</span>
+                            <span class="tech-badge">Google Workspace API</span>
+                            <span class="tech-badge">LangChain</span>
+                        </div>
+                        <p class="text-slate-500 text-sm">Capa de inteligencia para el cálculo normativo, análisis
+                            comparativo y redacción técnica de los informes finales.</p>
+                    </div>
+                    <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
+                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Cálculo de Índices</h6>
+                            <p class="text-xs text-slate-600">Cálculo determinístico de ICA e ICOMIS aplicando fórmulas
+                                científicas sobre los datos validados.</p>
+                        </div>
+                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
+                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Contraste Normativo</h6>
+                            <p class="text-xs text-slate-600">Comparación automática de resultados contra límites
+                                permisibles según la regulación ambiental aplicable.</p>
+                        </div>
+                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
+                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Generación en Google Docs</h6>
+                            <p class="text-xs text-slate-600">Creación dinámica de borradores en la suite de Google,
+                                incluyendo tablas, gráficos y conclusiones preliminares.</p>
+                        </div>
+                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
+                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Asistente de Redacción</h6>
+                            <p class="text-xs text-slate-600">Uso de IA para sugerir justificaciones técnicas basadas en
+                                las desviaciones encontradas en los parámetros.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Cronograma -->
-        <section class="section-divider">
-            <div class="grid md:grid-cols-3 gap-20">
-                <div>
-                    <h2 class="text-xs font-black uppercase tracking-[0.3em] redek-navy mb-6">03. Cronograma</h2>
-                    <p class="text-2xl font-bold redek-navy leading-tight">Fases de Ejecución</p>
-                </div>
-                <div class="md:col-span-2 space-y-16">
-                    
-                    <!-- MES 1 -->
-                    <div>
-                        <div class="month-label">Mes 1: Desarrollo Core</div>
-                        <div class="timeline-wrapper">
-                            <div class="timeline-track"></div>
-                            
-                            <div class="relative pl-8 mb-10">
-                                <div class="timeline-indicator" style="top: 4px;"></div>
-                                <h4 class="font-bold redek-navy">Semana 1-2: Requisitos e Ingeniería de Datos</h4>
-                                <p class="text-sm text-slate-500 mt-1 italic">Mapeo de la lógica de comparación y carga de plantillas estándar.</p>
-                            </div>
-
-                            <div class="relative pl-8">
-                                <div class="timeline-indicator" style="top: 4px;"></div>
-                                <h4 class="font-bold redek-navy">Semana 3-4: Motor NLP y Algoritmos</h4>
-                                <p class="text-sm text-slate-500 mt-1 italic">Configuración de PyPDF y algoritmos de similitud semántica.</p>
-                            </div>
+        <!-- Presupuesto Estimado -->
+        <section class="py-24 px-8 md:px-20 bg-redek-light">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-8 text-center">Propuesta Económica
+            </h2>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="bg-white shadow-sm overflow-hidden rounded-lg border border-slate-200">
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr class="bg-slate-50">
+                                    <th>Etapa del Proyecto</th>
+                                    <th>Componentes Técnicos</th>
+                                    <th class="text-right">Inversión (COP)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-bold">Fase 1: Infraestructura y Visión</td>
+                                    <td>Configuración Google Cloud + Módulo OCR (Fotos/PDF).</td>
+                                    <td class="font-mono text-redek-blue font-bold text-right">$ 45.000.000</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">Fase 2: Lógica de Datos</td>
+                                    <td>Motor de cálculo de índices + Integración Sheets/SQL.</td>
+                                    <td class="font-mono text-redek-blue font-bold text-right">$ 50.000.000</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">Fase 3: Generación Inteligente</td>
+                                    <td>Asistente Gemini en Google Docs + Validación UI.</td>
+                                    <td class="font-mono text-redek-blue font-bold text-right">$ 50.000.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="p-10 bg-redek-blue text-white text-center">
+                        <p class="text-xs uppercase tracking-widest opacity-60 mb-2">Inversión Total del Proyecto</p>
+                        <p class="text-5xl font-display font-bold">$ 145.000.000</p>
+                        <div class="mt-6 text-[10px] opacity-40 uppercase tracking-widest">
+                            <span>Precios expresados en Pesos Colombianos (COP) • Cronograma: 12 semanas</span>
                         </div>
                     </div>
+                </div>
 
-                    <!-- MES 2 -->
-                    <div>
-                        <div class="month-label">Mes 2: Interfaz y Lanzamiento</div>
-                        <div class="timeline-wrapper">
-                            <div class="timeline-track"></div>
-                            
-                            <div class="relative pl-8 mb-10">
-                                <div class="timeline-indicator" style="top: 4px;"></div>
-                                <h4 class="font-bold redek-navy">Semana 5-6: UI/UX y Generación de Reportes</h4>
-                                <p class="text-sm text-slate-500 mt-1 italic">Implementación del dashboard y diseño del reporte de diagnóstico.</p>
-                            </div>
-
-                            <div class="relative pl-8">
-                                <div class="timeline-indicator" style="top: 4px;"></div>
-                                <h4 class="font-bold redek-navy">Semana 7-8: QA, Ajustes y Go-Live</h4>
-                                <p class="text-sm text-slate-500 mt-1 italic">Pruebas finales con usuarios reales y despliegue en producción.</p>
-                            </div>
+                <!-- Forma de Pago -->
+                <div class="bg-white p-8 rounded-lg border border-slate-200">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-redek-accent mb-6">Condiciones de Pago
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="p-4 border border-slate-100 rounded bg-slate-50/50">
+                            <span class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Fase 1</span>
+                            <p class="text-sm font-semibold text-redek-blue">Anticipo al inicio de fase</p>
                         </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Inversión Fábrica de Software -->
-        <section class="section-divider">
-            <div class="grid md:grid-cols-3 gap-20">
-                <div>
-                    <h2 class="text-xs font-black uppercase tracking-[0.3em] redek-navy mb-6">04. Inversión</h2>
-                    <p class="text-2xl font-bold redek-navy leading-tight">Fábrica de Software especializado</p>
-                    <p class="text-sm text-slate-400 mt-4">Estimación basada en 500 horas de ingeniería aplicada.</p>
-                </div>
-                <div class="md:col-span-2">
-                    <table class="mb-12">
-                        <thead>
-                            <tr>
-                                <th>Línea de Servicio IT</th>
-                                <th>Carga Horaria</th>
-                                <th class="text-right">Inversión (COP)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="py-6">
-                                    <span class="font-bold redek-navy block uppercase text-[10px] tracking-widest mb-1">Manejo de Proyecto & QA</span>
-                                    <span class="text-xs text-slate-400 italic">Gestión, documentación técnica y control de calidad.</span>
-                                </td>
-                                <td class="text-xs font-medium text-slate-500">80 Horas</td>
-                                <td class="text-right font-medium">$ 4.000.000</td>
-                            </tr>
-                            <tr>
-                                <td class="py-6">
-                                    <span class="font-bold redek-navy block uppercase text-[10px] tracking-widest mb-1">Diseño & Arquitectura</span>
-                                    <span class="text-xs text-slate-400 italic">Arquitectura de microservicios (Flask), UI/UX Legal Design.</span>
-                                </td>
-                                <td class="text-xs font-medium text-slate-500">120 Horas</td>
-                                <td class="text-right font-medium">$ 6.000.000</td>
-                            </tr>
-                            <tr>
-                                <td class="py-6">
-                                    <span class="font-bold redek-navy block uppercase text-[10px] tracking-widest mb-1">Desarrollo e Implementación</span>
-                                    <span class="text-xs text-slate-400 italic">Ingeniería NLP, integración de PyPDF y despliegue IT.</span>
-                                </td>
-                                <td class="text-xs font-medium text-slate-500">300 Horas</td>
-                                <td class="text-right font-medium">$ 15.000.000</td>
-                            </tr>
-                            <tr class="bg-slate-50 border-t-2 border-redek-navy">
-                                <td colspan="2" class="font-black redek-navy py-8">TOTAL PROYECTO (LLAVE EN MANO)</td>
-                                <td class="text-right font-black text-2xl redek-navy">$ 25.000.000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="p-8 bg-slate-50 rounded-xl border border-dashed border-slate-300">
-                        <p class="text-[10px] text-slate-500 uppercase font-black mb-2 tracking-widest">Protocolo de Entrega</p>
-                        <p class="text-xs text-slate-600 leading-relaxed italic">
-                            Esta propuesta incluye la transferencia tecnológica completa: código fuente documentado, manuales de administración y capacitación técnica de 4 horas para el equipo de IT de la Cámara de Comercio de Cartagena.
-                        </p>
+                        <div class="p-4 border border-slate-100 rounded bg-slate-50/50">
+                            <span class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Fase 2</span>
+                            <p class="text-sm font-semibold text-redek-blue">Anticipo al inicio de fase</p>
+                        </div>
+                        <div class="p-4 border border-slate-100 rounded bg-slate-50/50">
+                            <span class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Fase 3</span>
+                            <p class="text-sm font-semibold text-redek-blue">Contra entrega al finalizar fase</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -263,13 +341,64 @@
 
     </main>
 
-    <footer class="bg-white border-t border-slate-100 py-20 px-8 text-center md:text-left">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] font-bold text-slate-400 tracking-[0.2em] uppercase space-y-4 md:space-y-0">
-            <div>Redek • Ingeniería Legal • 2026</div>
-            <div class="text-redek-navy">nicolas@redek.co</div>
-            <div>Excellence in Legal Tech</div>
+    <footer class="bg-white border-t border-slate-100 py-12 px-8 text-center">
+        <div class="max-w-5xl mx-auto">
+            <p class="text-slate-400 text-[10px] font-bold tracking-[0.2em] uppercase mb-4">Redek Solutions • Partner de
+                Ingeniería Legal</p>
+            <p class="text-slate-300 text-[9px] uppercase tracking-widest">Infraestructura tecnológica soportada por
+                Google Cloud Platform & Vertex AI</p>
         </div>
     </footer>
 
+    <script>
+        window.onload = function () {
+            const ctxRadar = document.getElementById('capabilityRadarChart').getContext('2d');
+            new Chart(ctxRadar, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'Velocidad de Entrega',
+                        'Precisión del Dato',
+                        'Escalabilidad',
+                        'Cumplimiento Normativo',
+                        'Optimización de Costos',
+                        'Trazabilidad Legal'
+                    ],
+                    datasets: [{
+                        label: 'Proceso Actual (Manual)',
+                        data: [20, 50, 25, 60, 40, 45],
+                        fill: true,
+                        backgroundColor: 'rgba(203, 213, 225, 0.2)',
+                        borderColor: '#94a3b8',
+                        pointBackgroundColor: '#94a3b8',
+                        pointBorderColor: '#fff'
+                    }, {
+                        label: 'Ecosistema Automatizado Redek',
+                        data: [95, 98, 92, 98, 85, 100],
+                        fill: true,
+                        backgroundColor: 'rgba(0, 85, 255, 0.1)',
+                        borderColor: '#0055ff',
+                        pointBackgroundColor: '#112146',
+                        pointBorderColor: '#fff',
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { size: 10, family: 'Inter' } } }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: { display: true },
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            ticks: { display: false }
+                        }
+                    }
+                }
+            });
+        };
+    </script>
 </body>
+
 </html>
