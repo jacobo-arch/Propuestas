@@ -1,404 +1,303 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propuesta Técnica Redek - Automatización de Laboratorio</title>
+    <title>Propuesta Redek - Justicia Civil Panamá</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
-        rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        redek: {
-                            blue: '#112146',
-                            accent: '#0055ff',
-                            light: '#f8fafc'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Plus Jakarta Sans', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        .premium-border {
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
+            background-color: #ffffff;
+            scroll-behavior: smooth;
+        }
+        .text-redek-blue { color: #112146; }
+        .bg-redek-blue { background-color: #112146; }
+        .border-redek-blue { border-color: #112146; }
+        
+        .section-padding { padding: 100px 0; }
+        .premium-card {
+            border: 1px solid #e5e7eb;
             border-radius: 2px;
+            transition: all 0.3s ease;
         }
-
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        th {
-            text-align: left;
-            border-bottom: 2px solid #112146;
-            padding: 12px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #64748b;
-        }
-
-        td {
-            padding: 16px 12px;
-            border-bottom: 1px solid #f1f5f9;
-            color: #1e293b;
-            font-size: 0.9rem;
-        }
-
         .hero-gradient {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.85)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
         }
-
-        .section-number {
-            font-size: 4rem;
-            font-weight: 800;
+        .phase-number {
+            font-size: 8rem;
             line-height: 1;
-            opacity: 0.1;
-            font-family: 'Plus Jakarta Sans';
+            font-weight: 700;
+            color: #112146;
+            opacity: 0.05;
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            z-index: 0;
         }
-
-        .tech-badge {
-            background: #f1f5f9;
-            color: #475569;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 10px;
-            font-weight: 600;
-            text-transform: uppercase;
-            display: inline-block;
-            margin-right: 4px;
-            margin-bottom: 4px;
-            border: 1px solid #e2e8f0;
+        .content-relative { position: relative; z-index: 10; }
+        .team-image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
         }
-
-        .req-card {
-            border-left: 3px solid #0055ff;
+        .premium-card:hover .team-image {
+            filter: grayscale(0%);
         }
+        table { border-collapse: collapse; width: 100%; }
+        th { text-align: left; padding: 16px; border-bottom: 2px solid #112146; color: #112146; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; }
+        td { padding: 16px; border-bottom: 1px solid #eee; font-size: 0.9rem; }
     </style>
 </head>
+<body class="antialiased">
 
-<body class="bg-white text-slate-900 leading-relaxed font-sans">
-
-    <!-- Header -->
-    <header
-        class="py-6 px-8 md:px-20 flex justify-between items-center bg-white sticky top-0 z-50 border-b border-slate-100">
-        <img src="https://redek.co/images/Recurso-4-p-500.png" alt="Redek Logo" class="h-10"
-            onerror="this.src='https://via.placeholder.com/150x50?text=REDEK'">
-        <div class="text-[10px] font-bold tracking-[0.2em] text-redek-blue uppercase">
-            Uso Interno • Documentación Técnica • Rev. 04-2026
-        </div>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-gradient py-24 px-8 md:px-20 border-b border-slate-50">
+    <!-- Sección Hero -->
+    <section class="hero-gradient h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-6 w-full text-center lg:text-left">
             <div class="max-w-4xl">
-                <h4 class="text-redek-accent font-bold text-xs uppercase tracking-widest mb-4">Ingeniería y
-                    Transformación Digital</h4>
-                <h1 class="text-5xl md:text-6xl font-display font-extrabold text-redek-blue mb-8 leading-tight">
-                    Arquitectura de Automatización de Informes Técnicos.
+                <span class="text-redek-blue font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Consultoría de Alta Estrategia e Ingeniería Legal</span>
+                <h1 class="text-5xl md:text-7xl font-light text-redek-blue leading-tight mb-8">
+                    IA para Asuntos Civiles: <span class="font-bold">Panamá 2026</span>
                 </h1>
-                <p class="text-xl text-slate-600 font-light max-w-2xl">
-                    Ecosistema basado en <strong>Google Cloud Platform</strong> y <strong>Vertex AI</strong> para la
-                    integración de datos LIMS, visión computacional y redacción técnica asistida.
+                <p class="text-xl text-gray-600 mb-10 leading-relaxed font-light">
+                    Intervención estratégica especializada en la evolución de contenidos y procesos judiciales civiles hacia un ecosistema de <span class="font-medium">resolución algorítmica de conflictos</span>.
                 </p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Comparativa Multidimensional -->
-        <section class="py-20 px-8 md:px-20">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">Análisis de Capacidades
-                    </h2>
-                    <h3 class="text-3xl font-display text-redek-blue mb-6">Impacto Multidimensional</h3>
-                    <p class="text-slate-600 mb-6">
-                        La implementación de este ecosistema desplaza el esfuerzo operativo desde la transcripción
-                        manual hacia la validación experta, incrementando la precisión y escalabilidad de la entrega.
+    <!-- Introducción y Visión -->
+    <section class="section-padding bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-16">
+                <div class="lg:col-span-5">
+                    <h2 class="text-xs font-bold text-redek-blue tracking-[0.3em] uppercase mb-6">Visión del Proyecto</h2>
+                    <h3 class="text-4xl font-light text-redek-blue leading-tight mb-8">
+                        Especialización en <span class="font-bold">Contenidos Civiles</span>
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed mb-6 text-lg font-light">
+                        Esta consultoría se centra exclusivamente en la inteligencia de los <strong>asuntos civiles</strong>, diseñando los contenidos y arquitecturas lógicas que permitirán la automatización ética y eficiente de la justicia.
                     </p>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-redek-accent"></div>
-                            <span class="text-sm font-semibold">Trazabilidad total mediante logs de auditoría en Cloud
-                                Run.</span>
+                    <div class="w-20 h-1 bg-redek-blue"></div>
+                </div>
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="p-8 bg-gray-50 premium-card">
+                            <h4 class="font-bold text-redek-blue mb-4 uppercase text-xs tracking-widest">El Problema</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                La saturación en la justicia civil panameña requiere una solución que no solo digitalice, sino que <strong>entienda el contenido</strong> jurídico para optimizar los tiempos de respuesta.
+                            </p>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-redek-accent"></div>
-                            <span class="text-sm font-semibold">Interpretación normativa automatizada con Gemini.</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-redek-accent"></div>
-                            <span class="text-sm font-semibold">Colaboración técnica en tiempo real vía Google Docs
-                                SDK.</span>
+                        <div class="p-8 bg-gray-50 premium-card">
+                            <h4 class="font-bold text-redek-blue mb-4 uppercase text-xs tracking-widest">Nuestra Solución</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Aplicación de IA para la gestión de contenidos civiles, facilitando la toma de decisiones judiciales mediante el análisis avanzado de datos procesales.
+                            </p>
                         </div>
                     </div>
-                </div>
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 flex justify-center">
-                    <div class="w-full max-w-md">
-                        <canvas id="capabilityRadarChart"></canvas>
+                    <div class="p-10 border border-redek-blue/20 bg-redek-blue/[0.02]">
+                        <h4 class="font-bold text-redek-blue mb-4 uppercase text-xs tracking-widest">Compromiso REDEK</h4>
+                        <p class="text-xl text-redek-blue font-light leading-relaxed">
+                            "Lideramos la ingeniería legal de contenidos para que la justicia civil sea rápida, transparente y basada en inteligencia de vanguardia, replicando modelos de éxito internacional."
+                        </p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Ecosistema Tecnológico y Requerimientos -->
-        <section class="py-24 px-8 md:px-20 bg-white">
-            <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6 text-center">Desglose de
-                Componentes</h2>
-            <h3 class="text-3xl font-display text-redek-blue mb-16 text-center">Ecosistema y Requerimientos Funcionales
-            </h3>
-
-            <div class="space-y-16">
-                <!-- 1. ETL Bridge -->
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-                    <div class="md:col-span-4">
-                        <div class="section-number text-redek-blue opacity-10">01</div>
-                        <h4 class="text-2xl font-display text-redek-blue mt-[-2rem] mb-4">Módulo ETL Bridge</h4>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tech-badge">Python 3.11</span>
-                            <span class="tech-badge">Cloud Run</span>
-                            <span class="tech-badge">SQLAlchemy</span>
+    <!-- Fase 1 a 4 (Detalle de Etapas) -->
+    <section id="fase1" class="section-padding bg-gray-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="relative">
+                <span class="phase-number">01</span>
+                <div class="content-relative lg:pl-20">
+                    <h2 class="text-xs font-bold text-redek-blue tracking-[0.3em] uppercase mb-4">Etapa 1: Diagnóstico Integral</h2>
+                    <h3 class="text-4xl font-light text-redek-blue mb-8">Auditoría de Contenidos y Procesos</h3>
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div class="space-y-6">
+                            <p class="text-gray-600 leading-relaxed italic">Semanas 1 - 10</p>
+                            <p class="text-gray-600 leading-relaxed">Auditoría forense de la operatividad judicial civil para identificar fallas estructurales y brechas en la fluidez del dato jurídico.</p>
                         </div>
-                        <p class="text-slate-500 text-sm">Capa de integración encargada del flujo de datos entre
-                            sistemas legados (Sample/LIMS) y el entorno de procesamiento.</p>
-                    </div>
-                    <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
-                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Sincronización SQL</h6>
-                            <p class="text-xs text-slate-600">Conexión automatizada a la DB de laboratorio para
-                                extracción de parámetros fisicoquímicos en intervalos definidos.</p>
-                        </div>
-                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
-                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Normalización ETL</h6>
-                            <p class="text-xs text-slate-600">Conversión de unidades técnicas y limpieza de registros
-                                inconsistentes previa a la ingesta analítica.</p>
-                        </div>
-                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
-                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Parsing de PDFs</h6>
-                            <p class="text-xs text-slate-600">Extracción de tablas y metadatos de archivos PDF de
-                                laboratorio mediante bibliotecas de análisis estructural.</p>
-                        </div>
-                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
-                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Trazabilidad Legal</h6>
-                            <p class="text-xs text-slate-600">Generación de logs de auditoría detallados por cada
-                                registro capturado para asegurar la cadena de custodia del dato.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Motor de Visión -->
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start border-t border-slate-100 pt-16">
-                    <div class="md:col-span-4">
-                        <div class="section-number text-redek-blue opacity-10">02</div>
-                        <h4 class="text-2xl font-display text-redek-blue mt-[-2rem] mb-4">Motor de Visión e Ingesta</h4>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tech-badge">Google Cloud Vision</span>
-                            <span class="tech-badge">Gemini</span>
-                            <span class="tech-badge">Vertex AI</span>
-                        </div>
-                        <p class="text-slate-500 text-sm">Procesamiento de registros visuales de campo para convertirlos
-                            en datos estructurados mediante modelos multimodales.</p>
-                    </div>
-                    <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
-                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">OCR Multimodal</h6>
-                            <p class="text-xs text-slate-600">Identificación de valores en pantallas de equipos (pH,
-                                oxímetros) mediante análisis de contexto visual con LLMs.</p>
-                        </div>
-                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
-                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Puntaje de Confianza</h6>
-                            <p class="text-xs text-slate-600">Asignación de métricas de fiabilidad a la extracción;
-                                activación automática de validación humana en umbrales bajos.</p>
-                        </div>
-                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
-                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Extracción Geográfica</h6>
-                            <p class="text-xs text-slate-600">Validación de metadatos EXIF y coordenadas para confirmar
-                                la ubicación exacta de la toma de muestra.</p>
-                        </div>
-                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
-                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Gestión de Medios</h6>
-                            <p class="text-xs text-slate-600">Almacenamiento y vinculación automática de fotografías al
-                                punto de monitoreo correspondiente en Cloud Storage.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. Cerebro Analítico -->
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start border-t border-slate-100 pt-16">
-                    <div class="md:col-span-4">
-                        <div class="section-number text-redek-blue opacity-10">03</div>
-                        <h4 class="text-2xl font-display text-redek-blue mt-[-2rem] mb-4">Cerebro e Integración Suite
-                        </h4>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tech-badge">Gemini</span>
-                            <span class="tech-badge">Google Workspace API</span>
-                            <span class="tech-badge">LangChain</span>
-                        </div>
-                        <p class="text-slate-500 text-sm">Capa de inteligencia para el cálculo normativo, análisis
-                            comparativo y redacción técnica de los informes finales.</p>
-                    </div>
-                    <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
-                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Cálculo de Índices</h6>
-                            <p class="text-xs text-slate-600">Cálculo determinístico de ICA e ICOMIS aplicando fórmulas
-                                científicas sobre los datos validados.</p>
-                        </div>
-                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
-                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Contraste Normativo</h6>
-                            <p class="text-xs text-slate-600">Comparación automática de resultados contra límites
-                                permisibles según la regulación ambiental aplicable.</p>
-                        </div>
-                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
-                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Generación en Google Docs</h6>
-                            <p class="text-xs text-slate-600">Creación dinámica de borradores en la suite de Google,
-                                incluyendo tablas, gráficos y conclusiones preliminares.</p>
-                        </div>
-                        <div class="req-card bg-slate-50 p-5 rounded-r-lg">
-                            <h6 class="font-bold text-redek-blue text-xs uppercase mb-2">Asistente de Redacción</h6>
-                            <p class="text-xs text-slate-600">Uso de IA para sugerir justificaciones técnicas basadas en
-                                las desviaciones encontradas en los parámetros.</p>
+                        <div class="p-8 premium-card bg-redek-blue text-white">
+                            <h4 class="font-bold mb-4 uppercase text-xs tracking-widest opacity-70">Entregable Crítico:</h4>
+                            <p class="text-lg font-light leading-snug">Blueprint de Brechas y Mapa de Riesgos Operativos Civiles.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Presupuesto Estimado -->
-        <section class="py-24 px-8 md:px-20 bg-redek-light">
-            <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-8 text-center">Propuesta Económica
-            </h2>
-            <div class="max-w-4xl mx-auto space-y-8">
-                <div class="bg-white shadow-sm overflow-hidden rounded-lg border border-slate-200">
-                    <div class="overflow-x-auto">
-                        <table>
-                            <thead>
-                                <tr class="bg-slate-50">
-                                    <th>Etapa del Proyecto</th>
-                                    <th>Componentes Técnicos</th>
-                                    <th class="text-right">Inversión (COP)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="font-bold">Fase 1: Infraestructura y Visión</td>
-                                    <td>Configuración Google Cloud + Módulo OCR (Fotos/PDF).</td>
-                                    <td class="font-mono text-redek-blue font-bold text-right">$ 25.000.000</td>
-                                </tr>
-                                <tr>
-                                    <td class="font-bold">Fase 2: Lógica de Datos</td>
-                                    <td>Motor de cálculo de índices + Integración Sheets/SQL.</td>
-                                    <td class="font-mono text-redek-blue font-bold text-right">$ 25.000.000</td>
-                                </tr>
-                                <tr>
-                                    <td class="font-bold">Fase 3: Generación Inteligente</td>
-                                    <td>Asistente Gemini en Google Docs + Validación UI.</td>
-                                    <td class="font-mono text-redek-blue font-bold text-right">$ 29.000.000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="p-10 bg-redek-blue text-white text-center">
-                        <p class="text-xs uppercase tracking-widest opacity-60 mb-2">Inversión Total del Proyecto</p>
-                        <p class="text-5xl font-display font-bold">$ 79.000.000</p>
-                        <div class="mt-6 text-[10px] opacity-40 uppercase tracking-widest">
-                            <span>Precios expresados en Pesos Colombianos (COP) • Cronograma: 12 semanas</span>
+    <section id="fase2" class="section-padding bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="relative">
+                <span class="phase-number">02</span>
+                <div class="content-relative lg:pl-20">
+                    <h2 class="text-xs font-bold text-redek-blue tracking-[0.3em] uppercase mb-4">Etapa 2: Arquitectura Lógica</h2>
+                    <h3 class="text-4xl font-light text-redek-blue mb-8">Gobernanza de IA para Asuntos Civiles</h3>
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div class="space-y-6">
+                            <p class="text-gray-600 leading-relaxed italic">Semanas 11 - 20</p>
+                            <p class="text-gray-600 leading-relaxed">Establecimiento de las reglas del juego para el uso de IA y diseño de contenidos de desjudicialización mediante ODR.</p>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Forma de Pago -->
-                <div class="bg-white p-8 rounded-lg border border-slate-200">
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-redek-accent mb-6">Condiciones de Pago
-                    </h4>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="p-4 border border-slate-100 rounded bg-slate-50/50">
-                            <span class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Fase 1</span>
-                            <p class="text-sm font-semibold text-redek-blue">Anticipo al inicio de fase</p>
-                        </div>
-                        <div class="p-4 border border-slate-100 rounded bg-slate-50/50">
-                            <span class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Fase 2</span>
-                            <p class="text-sm font-semibold text-redek-blue">Anticipo al inicio de fase</p>
-                        </div>
-                        <div class="p-4 border border-slate-100 rounded bg-slate-50/50">
-                            <span class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Fase 3</span>
-                            <p class="text-sm font-semibold text-redek-blue">Contra entrega al finalizar fase</p>
+                        <div class="p-8 premium-card bg-redek-blue text-white">
+                            <h4 class="font-bold mb-4 uppercase text-xs tracking-widest opacity-70">Entregable Crítico:</h4>
+                            <p class="text-lg font-light leading-snug">Master Plan de IT y Código de Ética Algorítmica Civil.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
+    <section id="fase3" class="section-padding bg-gray-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="relative">
+                <span class="phase-number">03</span>
+                <div class="content-relative lg:pl-20">
+                    <h2 class="text-xs font-bold text-redek-blue tracking-[0.3em] uppercase mb-4">Etapa 3: Implementación Piloto</h2>
+                    <h3 class="text-4xl font-light text-redek-blue mb-8">Validación en Entorno Judicial Real</h3>
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div class="space-y-6">
+                            <p class="text-gray-600 leading-relaxed italic">Semanas 21 - 32</p>
+                            <p class="text-gray-600 leading-relaxed">Despliegue de asistentes IA para resumen de expedientes civiles y reingeniería de interfaces bajo Legal Design.</p>
+                        </div>
+                        <div class="p-8 premium-card bg-redek-blue text-white">
+                            <h4 class="font-bold mb-4 uppercase text-xs tracking-widest opacity-70">Entregable Crítico:</h4>
+                            <p class="text-lg font-light leading-snug">Ecosistema Judicial Beta y Reporte de Impacto en Despachos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer class="bg-white border-t border-slate-100 py-12 px-8 text-center">
-        <div class="max-w-5xl mx-auto">
-            <p class="text-slate-400 text-[10px] font-bold tracking-[0.2em] uppercase mb-4">Redek Solutions • Partner de
-                Ingeniería Legal</p>
-            <p class="text-slate-300 text-[9px] uppercase tracking-widest">Infraestructura tecnológica soportada por
-                Google Cloud Platform & Vertex AI</p>
+    <section id="fase4" class="section-padding bg-white relative overflow-hidden border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="relative">
+                <span class="phase-number">04</span>
+                <div class="content-relative lg:pl-20">
+                    <h2 class="text-xs font-bold text-redek-blue tracking-[0.3em] uppercase mb-4">Etapa 4: Escalabilidad</h2>
+                    <h3 class="text-4xl font-light text-redek-blue mb-8">Transferencia y Certificación de Capacidades</h3>
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div class="space-y-6">
+                            <p class="text-gray-600 leading-relaxed italic">Semanas 33 - 40</p>
+                            <p class="text-gray-600 leading-relaxed">Consolidación del talento humano mediante la Academia REDEK y entrega del plan de escalabilidad nacional.</p>
+                        </div>
+                        <div class="p-8 premium-card bg-redek-blue text-white">
+                            <h4 class="font-bold mb-4 uppercase text-xs tracking-widest opacity-70">Entregable Crítico:</h4>
+                            <p class="text-lg font-light leading-snug">Personal Certificado y Manual de Escalabilidad Fase 2.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Propuesta Económica -->
+    <section id="inversion" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-xs font-bold text-redek-blue tracking-[0.3em] uppercase mb-16 text-center">Inversión Provisional</h2>
+            <div class="overflow-x-auto max-w-4xl mx-auto">
+                <table class="premium-card">
+                    <thead>
+                        <tr class="bg-gray-50">
+                            <th>Concepto de Consultoría</th>
+                            <th class="text-right">Inversión (USD)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Diagnóstico, Arquitectura, Implementación Piloto y Transferencia de Conocimiento</td>
+                            <td class="font-bold text-right text-lg">$50,000</td>
+                        </tr>
+                        <tr class="bg-redek-blue text-white">
+                            <td class="py-6 px-8 uppercase font-bold tracking-widest">Inversión Total Estimada</td>
+                            <td class="text-2xl font-bold px-8 text-right">$50,000*</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="text-[10px] text-gray-400 uppercase tracking-widest text-center mt-6">* Valores provisionales sujetos a confirmación de alcance final. No incluye impuestos locales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipo Estratégico -->
+    <section id="equipo" class="section-padding bg-gray-50 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-xs font-bold text-redek-blue tracking-[0.3em] uppercase mb-16 text-center">Equipo a Cargo</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Miembro 1 -->
+                <div class="premium-card bg-white overflow-hidden flex flex-col">
+                    <img src="https://media.licdn.com/dms/image/v2/C4D03AQF6Lpu2lOAK6w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1623439415006?e=1775088000&v=beta&t=W6BgV98Kc0PUniz7tDz-FlFjZ0-NVZ3x4DgyA2wHkHI" alt="Nicolás Lozada" class="team-image">
+                    <div class="p-6">
+                        <span class="text-[10px] font-bold text-redek-blue uppercase tracking-widest mb-2 block">Líder Estratégico</span>
+                        <h4 class="text-lg font-bold text-redek-blue mb-2 leading-tight">Nicolás Lozada</h4>
+                        <p class="text-[11px] text-gray-600 leading-relaxed">Socio de Redek. Actualmente lidera el <strong>Plan Sectorial 2027-2030 para el Consejo Superior de la Judicatura en Colombia</strong>. Experto en ODR y modernización judicial.</p>
+                    </div>
+                </div>
+
+                <!-- Miembro 2 -->
+                <div class="premium-card bg-white overflow-hidden flex flex-col">
+                    <img src="https://media.licdn.com/dms/image/v2/C4D03AQE-WJXnr9NAyQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1523747788114?e=1775088000&v=beta&t=dl05dqW7YIHgMwvmd6nldN-M26qdBJiHM8XrZGjQkHU" alt="Luis Fernando Mejía" class="team-image">
+                    <div class="p-6">
+                        <span class="text-[10px] font-bold text-redek-blue uppercase tracking-widest mb-2 block">Análisis Económico</span>
+                        <h4 class="text-lg font-bold text-redek-blue mb-2 leading-tight">Luis Fernando Mejía</h4>
+                        <p class="text-[11px] text-gray-600 leading-relaxed">Director de Fedesarrollo. Aporta la visión macroeconómica y financiera sobre el impacto de la eficiencia judicial en la competitividad nacional.</p>
+                    </div>
+                </div>
+
+                <!-- Miembro 3 -->
+                <div class="premium-card bg-white overflow-hidden flex flex-col">
+                    <img src="https://media.licdn.com/dms/image/v2/C4D03AQFFHI8qAsMwXA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1614278458661?e=1775088000&v=beta&t=5M8OX-1OweynhzwjgePsNjG6kTkIYIOtMok8cF11Ml0" alt="Juan Camilo Herrera" class="team-image">
+                    <div class="p-6">
+                        <span class="text-[10px] font-bold text-redek-blue uppercase tracking-widest mb-2 block">Derecho Comparado</span>
+                        <h4 class="text-lg font-bold text-redek-blue mb-2 leading-tight">Juan Camilo Herrera</h4>
+                        <p class="text-[11px] text-gray-600 leading-relaxed">Líder técnico del <strong>Plan Sectorial 2027-2030 para el Consejo Superior de la Judicatura en Colombia</strong>. Investigador del Instituto Max Planck.</p>
+                    </div>
+                </div>
+
+                <!-- Miembro 4 -->
+                <div class="premium-card bg-white overflow-hidden flex flex-col border-redek-blue border-2">
+                    <img src="https://media.licdn.com/dms/image/v2/D4E03AQGJR8k-bkwUPQ/profile-displayphoto-scale_400_400/B4EZuWlDKeIgAg-/0/1767757853905?e=1775692800&v=beta&t=JqewZLCtAX3g7bZGhSXCAMiIXTQAMbT-ri_cMJ8EFjE" alt="David F. Varela" class="team-image">
+                    <div class="p-6">
+                        <span class="text-[10px] font-bold text-redek-blue uppercase tracking-widest mb-2 block">Socio Residente Panamá</span>
+                        <h4 class="text-lg font-bold text-redek-blue mb-2 leading-tight">David F. Varela</h4>
+                        <p class="text-[11px] text-gray-600 leading-relaxed"><strong>Residente en Panamá</strong>. Asesor del <strong>Consejo Nacional de Competitividad de Panamá</strong>. Experto senior en reforma judicial con amplia trayectoria en el Banco Mundial.</p>
+                    </div>
+                </div>
+
+                <!-- Miembro 5 -->
+                <div class="premium-card bg-white overflow-hidden flex flex-col">
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQGZf4gj08-BwA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1692232797677?e=1775692800&v=beta&t=1r_xKm5jtny6wDGH91LpAzK_XCDW0XvOFPBTBWRvvWo" alt="Gabriel Cifuentes" class="team-image">
+                    <div class="p-6">
+                        <span class="text-[10px] font-bold text-redek-blue uppercase tracking-widest mb-2 block">Derecho Público</span>
+                        <h4 class="text-lg font-bold text-redek-blue mb-2 leading-tight">Gabriel Cifuentes</h4>
+                        <p class="text-[11px] text-gray-600 leading-relaxed">Experto en políticas públicas y transparencia. Maestrías en Harvard y NYU. Aporta visión estratégica en la gestión del cambio institucional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 py-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <img src="https://redek.co/images/Recurso-4-p-500.png" alt="REDEK Logo" class="h-8 mx-auto mb-10 opacity-50 grayscale" onerror="this.src='https://via.placeholder.com/150x40?text=REDEK'">
+            <p class="text-redek-blue font-bold text-xs tracking-[0.4em] uppercase mb-4">REDEK: INNOVACIÓN JURÍDICA GLOBAL • ODR • AI</p>
+            <p class="text-gray-400 text-xs mb-8">BOGOTÁ</p>
+            <div class="w-16 h-px bg-gray-200 mx-auto mb-8"></div>
+            <a href="mailto:info@redek.co" class="text-redek-blue font-semibold hover:underline">info@redek.co</a>
+            <p class="mt-12 text-[10px] text-gray-300 uppercase tracking-widest">© 2026 REDEK LEGAL ENGINEERING. TODOS LOS DERECHOS RESERVADOS.</p>
         </div>
     </footer>
 
-    <script>
-        window.onload = function () {
-            const ctxRadar = document.getElementById('capabilityRadarChart').getContext('2d');
-            new Chart(ctxRadar, {
-                type: 'radar',
-                data: {
-                    labels: [
-                        'Velocidad de Entrega',
-                        'Precisión del Dato',
-                        'Escalabilidad',
-                        'Cumplimiento Normativo',
-                        'Optimización de Costos',
-                        'Trazabilidad Legal'
-                    ],
-                    datasets: [{
-                        label: 'Proceso Actual (Manual)',
-                        data: [20, 50, 25, 60, 40, 45],
-                        fill: true,
-                        backgroundColor: 'rgba(203, 213, 225, 0.2)',
-                        borderColor: '#94a3b8',
-                        pointBackgroundColor: '#94a3b8',
-                        pointBorderColor: '#fff'
-                    }, {
-                        label: 'Ecosistema Automatizado Redek',
-                        data: [95, 98, 92, 98, 85, 100],
-                        fill: true,
-                        backgroundColor: 'rgba(0, 85, 255, 0.1)',
-                        borderColor: '#0055ff',
-                        pointBackgroundColor: '#112146',
-                        pointBorderColor: '#fff',
-                        borderWidth: 3
-                    }]
-                },
-                options: {
-                    plugins: {
-                        legend: { position: 'bottom', labels: { font: { size: 10, family: 'Inter' } } }
-                    },
-                    scales: {
-                        r: {
-                            angleLines: { display: true },
-                            suggestedMin: 0,
-                            suggestedMax: 100,
-                            ticks: { display: false }
-                        }
-                    }
-                }
-            });
-        };
-    </script>
 </body>
-
 </html>
