@@ -17,7 +17,7 @@
         .bg-redek-blue { background-color: #112146; }
         .border-redek-blue { border-color: #112146; }
         
-        .section-padding { padding: 100px 0; }
+        .section-padding { padding: 80px 0; }
         .premium-card {
             border: 1px solid #e5e7eb;
             border-radius: 2px;
@@ -53,19 +53,24 @@
         table { border-collapse: collapse; width: 100%; }
         th { text-align: left; padding: 16px; border-bottom: 2px solid #112146; color: #112146; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; }
         td { padding: 16px; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+        
+        .footer-logo {
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Sección Hero -->
-    <section class="hero-gradient h-screen flex items-center">
+    <section class="hero-gradient min-h-[60vh] flex items-center py-20">
         <div class="max-w-7xl mx-auto px-6 w-full text-center lg:text-left">
             <div class="max-w-4xl">
-                <span class="text-redek-blue font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Consultoría de Alta Estrategia e Ingeniería Legal</span>
-                <h1 class="text-5xl md:text-7xl font-light text-redek-blue leading-tight mb-8">
+                <span class="text-redek-blue font-bold tracking-[0.3em] uppercase text-[10px] mb-4 block">Consultoría de Alta Estrategia e Ingeniería Legal</span>
+                <h1 class="text-4xl md:text-6xl font-light text-redek-blue leading-tight mb-6">
                     IA para Asuntos Civiles: <span class="font-bold">Panamá 2026</span>
                 </h1>
-                <p class="text-xl text-gray-600 mb-10 leading-relaxed font-light">
+                <p class="text-lg text-gray-600 leading-relaxed font-light">
                     Intervención estratégica especializada en la evolución de contenidos y procesos judiciales civiles hacia un ecosistema de <span class="font-medium">resolución algorítmica de conflictos</span>.
                 </p>
             </div>
@@ -78,10 +83,10 @@
             <div class="grid lg:grid-cols-12 gap-16">
                 <div class="lg:col-span-5">
                     <h2 class="text-xs font-bold text-redek-blue tracking-[0.3em] uppercase mb-6">Visión del Proyecto</h2>
-                    <h3 class="text-4xl font-light text-redek-blue leading-tight mb-8">
+                    <h3 class="text-3xl font-light text-redek-blue leading-tight mb-8">
                         Especialización en <span class="font-bold">Contenidos Civiles</span>
                     </h3>
-                    <p class="text-gray-600 leading-relaxed mb-6 text-lg font-light">
+                    <p class="text-gray-600 leading-relaxed mb-6 text-base font-light">
                         Esta consultoría se centra exclusivamente en la inteligencia de los <strong>asuntos civiles</strong>, diseñando los contenidos y arquitecturas lógicas que permitirán la automatización ética y eficiente de la justicia.
                     </p>
                     <div class="w-20 h-1 bg-redek-blue"></div>
@@ -103,7 +108,7 @@
                     </div>
                     <div class="p-10 border border-redek-blue/20 bg-redek-blue/[0.02]">
                         <h4 class="font-bold text-redek-blue mb-4 uppercase text-xs tracking-widest">Compromiso REDEK</h4>
-                        <p class="text-xl text-redek-blue font-light leading-relaxed">
+                        <p class="text-lg text-redek-blue font-light leading-relaxed">
                             "Lideramos la ingeniería legal de contenidos para que la justicia civil sea rápida, transparente y basada en inteligencia de vanguardia, replicando modelos de éxito internacional."
                         </p>
                     </div>
@@ -112,18 +117,18 @@
         </div>
     </section>
 
-    <!-- Fase 1 a 4 (Detalle de Etapas) -->
+    <!-- Fase 1 -->
     <section id="fase1" class="section-padding bg-gray-50 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
             <div class="relative">
                 <span class="phase-number">01</span>
                 <div class="content-relative lg:pl-20">
                     <h2 class="text-xs font-bold text-redek-blue tracking-[0.3em] uppercase mb-4">Etapa 1: Diagnóstico Integral</h2>
-                    <h3 class="text-4xl font-light text-redek-blue mb-8">Auditoría de Contenidos y Procesos</h3>
+                    <h3 class="text-3xl font-light text-redek-blue mb-8">Auditoría de Contenidos y Procesos</h3>
                     <div class="grid md:grid-cols-2 gap-12">
                         <div class="space-y-6">
-                            <p class="text-gray-600 leading-relaxed italic">Semanas 1 - 10</p>
-                            <p class="text-gray-600 leading-relaxed">Auditoría forense de la operatividad judicial civil para identificar fallas estructurales y brechas en la fluidez del dato jurídico.</p>
+                            <p class="text-gray-600 leading-relaxed italic text-sm">Semanas 1 - 10</p>
+                            <p class="text-gray-600 leading-relaxed text-sm">Auditoría forense de la operatividad judicial civil para identificar fallas estructurales y brechas en la fluidez del dato jurídico.</p>
                         </div>
                         <div class="p-8 premium-card bg-redek-blue text-white">
                             <h4 class="font-bold mb-4 uppercase text-xs tracking-widest opacity-70">Entregable Crítico:</h4>
@@ -135,17 +140,18 @@
         </div>
     </section>
 
+    <!-- Fase 2 -->
     <section id="fase2" class="section-padding bg-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
             <div class="relative">
                 <span class="phase-number">02</span>
                 <div class="content-relative lg:pl-20">
                     <h2 class="text-xs font-bold text-redek-blue tracking-[0.3em] uppercase mb-4">Etapa 2: Arquitectura Lógica</h2>
-                    <h3 class="text-4xl font-light text-redek-blue mb-8">Gobernanza de IA para Asuntos Civiles</h3>
+                    <h3 class="text-3xl font-light text-redek-blue mb-8">Gobernanza de IA para Asuntos Civiles</h3>
                     <div class="grid md:grid-cols-2 gap-12">
                         <div class="space-y-6">
-                            <p class="text-gray-600 leading-relaxed italic">Semanas 11 - 20</p>
-                            <p class="text-gray-600 leading-relaxed">Establecimiento de las reglas del juego para el uso de IA y diseño de contenidos de desjudicialización mediante ODR.</p>
+                            <p class="text-gray-600 leading-relaxed italic text-sm">Semanas 11 - 20</p>
+                            <p class="text-gray-600 leading-relaxed text-sm">Establecimiento de las reglas del juego para el uso de IA y diseño de contenidos de desjudicialización mediante ODR.</p>
                         </div>
                         <div class="p-8 premium-card bg-redek-blue text-white">
                             <h4 class="font-bold mb-4 uppercase text-xs tracking-widest opacity-70">Entregable Crítico:</h4>
@@ -157,17 +163,18 @@
         </div>
     </section>
 
+    <!-- Fase 3 -->
     <section id="fase3" class="section-padding bg-gray-50 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
             <div class="relative">
                 <span class="phase-number">03</span>
                 <div class="content-relative lg:pl-20">
                     <h2 class="text-xs font-bold text-redek-blue tracking-[0.3em] uppercase mb-4">Etapa 3: Implementación Piloto</h2>
-                    <h3 class="text-4xl font-light text-redek-blue mb-8">Validación en Entorno Judicial Real</h3>
+                    <h3 class="text-3xl font-light text-redek-blue mb-8">Validación en Entorno Judicial Real</h3>
                     <div class="grid md:grid-cols-2 gap-12">
                         <div class="space-y-6">
-                            <p class="text-gray-600 leading-relaxed italic">Semanas 21 - 32</p>
-                            <p class="text-gray-600 leading-relaxed">Despliegue de asistentes IA para resumen de expedientes civiles y reingeniería de interfaces bajo Legal Design.</p>
+                            <p class="text-gray-600 leading-relaxed italic text-sm">Semanas 21 - 32</p>
+                            <p class="text-gray-600 leading-relaxed text-sm">Despliegue de asistentes IA para resumen de expedientes civiles y reingeniería de interfaces bajo Legal Design.</p>
                         </div>
                         <div class="p-8 premium-card bg-redek-blue text-white">
                             <h4 class="font-bold mb-4 uppercase text-xs tracking-widest opacity-70">Entregable Crítico:</h4>
@@ -179,21 +186,22 @@
         </div>
     </section>
 
+    <!-- Fase 4 -->
     <section id="fase4" class="section-padding bg-white relative overflow-hidden border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6">
             <div class="relative">
                 <span class="phase-number">04</span>
                 <div class="content-relative lg:pl-20">
                     <h2 class="text-xs font-bold text-redek-blue tracking-[0.3em] uppercase mb-4">Etapa 4: Escalabilidad</h2>
-                    <h3 class="text-4xl font-light text-redek-blue mb-8">Transferencia y Certificación de Capacidades</h3>
+                    <h3 class="text-3xl font-light text-redek-blue mb-8">Transferencia y Certificación de Capacidades</h3>
                     <div class="grid md:grid-cols-2 gap-12">
                         <div class="space-y-6">
-                            <p class="text-gray-600 leading-relaxed italic">Semanas 33 - 40</p>
-                            <p class="text-gray-600 leading-relaxed">Consolidación del talento humano mediante la Academia REDEK y entrega del plan de escalabilidad nacional.</p>
+                            <p class="text-gray-600 leading-relaxed italic text-sm">Semanas 33 - 40</p>
+                            <p class="text-gray-600 leading-relaxed text-sm">Consolidación del talento humano mediante la Academia REDEK y entrega del plan de escalabilidad nacional.</p>
                         </div>
                         <div class="p-8 premium-card bg-redek-blue text-white">
                             <h4 class="font-bold mb-4 uppercase text-xs tracking-widest opacity-70">Entregable Crítico:</h4>
-                            <p class="text-lg font-light leading-snug">Personal Certificado y Manual de Escalabilidad Fase 2.</p>
+                            <p class="text-lg font-light leading-snug">Personal Certificado y Manual de Escalabilidad Nacional Fase 2.</p>
                         </div>
                     </div>
                 </div>
@@ -204,7 +212,7 @@
     <!-- Propuesta Económica -->
     <section id="inversion" class="section-padding bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-xs font-bold text-redek-blue tracking-[0.3em] uppercase mb-16 text-center">Inversión Provisional</h2>
+            <h2 class="text-xs font-bold text-redek-blue tracking-[0.3em] uppercase mb-12 text-center">Inversión Provisional</h2>
             <div class="overflow-x-auto max-w-4xl mx-auto">
                 <table class="premium-card">
                     <thead>
@@ -220,7 +228,7 @@
                         </tr>
                         <tr class="bg-redek-blue text-white">
                             <td class="py-6 px-8 uppercase font-bold tracking-widest">Inversión Total Estimada</td>
-                            <td class="text-2xl font-bold px-8 text-right">$50,000*</td>
+                            <td class="text-xl font-bold px-8 text-right">$50,000*</td>
                         </tr>
                     </tbody>
                 </table>
@@ -239,8 +247,8 @@
                     <img src="https://media.licdn.com/dms/image/v2/C4D03AQF6Lpu2lOAK6w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1623439415006?e=1775088000&v=beta&t=W6BgV98Kc0PUniz7tDz-FlFjZ0-NVZ3x4DgyA2wHkHI" alt="Nicolás Lozada" class="team-image">
                     <div class="p-6">
                         <span class="text-[10px] font-bold text-redek-blue uppercase tracking-widest mb-2 block">Líder Estratégico</span>
-                        <h4 class="text-lg font-bold text-redek-blue mb-2 leading-tight">Nicolás Lozada</h4>
-                        <p class="text-[11px] text-gray-600 leading-relaxed">Socio de Redek. Actualmente lidera el <strong>Plan Sectorial 2027-2030 para el Consejo Superior de la Judicatura en Colombia</strong>. Experto en ODR y modernización judicial.</p>
+                        <h4 class="text-base font-bold text-redek-blue mb-2 leading-tight">Nicolás Lozada</h4>
+                        <p class="text-[10px] text-gray-600 leading-relaxed">Socio de Redek. Lidera el <strong>Plan Sectorial 2027-2030 para el Consejo Superior de la Judicatura en Colombia</strong>.</p>
                     </div>
                 </div>
 
@@ -249,28 +257,28 @@
                     <img src="https://media.licdn.com/dms/image/v2/C4D03AQE-WJXnr9NAyQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1523747788114?e=1775088000&v=beta&t=dl05dqW7YIHgMwvmd6nldN-M26qdBJiHM8XrZGjQkHU" alt="Luis Fernando Mejía" class="team-image">
                     <div class="p-6">
                         <span class="text-[10px] font-bold text-redek-blue uppercase tracking-widest mb-2 block">Análisis Económico</span>
-                        <h4 class="text-lg font-bold text-redek-blue mb-2 leading-tight">Luis Fernando Mejía</h4>
-                        <p class="text-[11px] text-gray-600 leading-relaxed">Director de Fedesarrollo. Aporta la visión macroeconómica y financiera sobre el impacto de la eficiencia judicial en la competitividad nacional.</p>
+                        <h4 class="text-base font-bold text-redek-blue mb-2 leading-tight">Luis Fernando Mejía</h4>
+                        <p class="text-[10px] text-gray-600 leading-relaxed">Director de Fedesarrollo. Aporta la visión financiera sobre el impacto de la eficiencia judicial.</p>
                     </div>
                 </div>
 
                 <!-- Miembro 3 -->
-                <div class="premium-card bg-white overflow-hidden flex flex-col">
+                <div class="premium-card bg-white overflow-hidden flex flex-col border-redek-blue border-b-2">
                     <img src="https://media.licdn.com/dms/image/v2/C4D03AQFFHI8qAsMwXA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1614278458661?e=1775088000&v=beta&t=5M8OX-1OweynhzwjgePsNjG6kTkIYIOtMok8cF11Ml0" alt="Juan Camilo Herrera" class="team-image">
                     <div class="p-6">
                         <span class="text-[10px] font-bold text-redek-blue uppercase tracking-widest mb-2 block">Derecho Comparado</span>
-                        <h4 class="text-lg font-bold text-redek-blue mb-2 leading-tight">Juan Camilo Herrera</h4>
-                        <p class="text-[11px] text-gray-600 leading-relaxed">Líder técnico del <strong>Plan Sectorial 2027-2030 para el Consejo Superior de la Judicatura en Colombia</strong>. Investigador del Instituto Max Planck.</p>
+                        <h4 class="text-base font-bold text-redek-blue mb-2 leading-tight">Juan Camilo Herrera</h4>
+                        <p class="text-[10px] text-gray-600 leading-relaxed">Líder técnico del <strong>Plan Sectorial 2027-2030 para el CSJ en Colombia</strong>. Investigador Max Planck.</p>
                     </div>
                 </div>
 
                 <!-- Miembro 4 -->
-                <div class="premium-card bg-white overflow-hidden flex flex-col border-redek-blue border-2">
+                <div class="premium-card bg-white overflow-hidden flex flex-col border-redek-blue border-b-2">
                     <img src="https://media.licdn.com/dms/image/v2/D4E03AQGJR8k-bkwUPQ/profile-displayphoto-scale_400_400/B4EZuWlDKeIgAg-/0/1767757853905?e=1775692800&v=beta&t=JqewZLCtAX3g7bZGhSXCAMiIXTQAMbT-ri_cMJ8EFjE" alt="David F. Varela" class="team-image">
                     <div class="p-6">
                         <span class="text-[10px] font-bold text-redek-blue uppercase tracking-widest mb-2 block">Socio Residente Panamá</span>
-                        <h4 class="text-lg font-bold text-redek-blue mb-2 leading-tight">David F. Varela</h4>
-                        <p class="text-[11px] text-gray-600 leading-relaxed"><strong>Residente en Panamá</strong>. Asesor del <strong>Consejo Nacional de Competitividad de Panamá</strong>. Experto senior en reforma judicial con amplia trayectoria en el Banco Mundial.</p>
+                        <h4 class="text-base font-bold text-redek-blue mb-2 leading-tight">David F. Varela</h4>
+                        <p class="text-[10px] text-gray-600 leading-relaxed"><strong>Residente en Panamá</strong>. Asesor del <strong>Consejo Nacional de Competitividad de Panamá</strong>.</p>
                     </div>
                 </div>
 
@@ -279,8 +287,8 @@
                     <img src="https://media.licdn.com/dms/image/v2/D5603AQGZf4gj08-BwA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1692232797677?e=1775692800&v=beta&t=1r_xKm5jtny6wDGH91LpAzK_XCDW0XvOFPBTBWRvvWo" alt="Gabriel Cifuentes" class="team-image">
                     <div class="p-6">
                         <span class="text-[10px] font-bold text-redek-blue uppercase tracking-widest mb-2 block">Derecho Público</span>
-                        <h4 class="text-lg font-bold text-redek-blue mb-2 leading-tight">Gabriel Cifuentes</h4>
-                        <p class="text-[11px] text-gray-600 leading-relaxed">Experto en políticas públicas y transparencia. Maestrías en Harvard y NYU. Aporta visión estratégica en la gestión del cambio institucional.</p>
+                        <h4 class="text-base font-bold text-redek-blue mb-2 leading-tight">Gabriel Cifuentes</h4>
+                        <p class="text-[10px] text-gray-600 leading-relaxed">Experto en políticas públicas. Maestrías en Harvard y NYU. Ex Secretario de Transparencia.</p>
                     </div>
                 </div>
             </div>
@@ -288,14 +296,14 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-100 py-20">
+    <footer class="bg-redek-blue py-20 text-white">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <img src="https://redek.co/images/Recurso-4-p-500.png" alt="REDEK Logo" class="h-8 mx-auto mb-10 opacity-50 grayscale" onerror="this.src='https://via.placeholder.com/150x40?text=REDEK'">
-            <p class="text-redek-blue font-bold text-xs tracking-[0.4em] uppercase mb-4">REDEK: INNOVACIÓN JURÍDICA GLOBAL • ODR • AI</p>
-            <p class="text-gray-400 text-xs mb-8">BOGOTÁ</p>
-            <div class="w-16 h-px bg-gray-200 mx-auto mb-8"></div>
-            <a href="mailto:info@redek.co" class="text-redek-blue font-semibold hover:underline">info@redek.co</a>
-            <p class="mt-12 text-[10px] text-gray-300 uppercase tracking-widest">© 2026 REDEK LEGAL ENGINEERING. TODOS LOS DERECHOS RESERVADOS.</p>
+            <img src="https://redek.co/images/Recurso-4-p-500.png" alt="REDEK Logo" class="footer-logo h-8 mx-auto mb-10">
+            <p class="font-bold text-xs tracking-[0.4em] uppercase mb-4 text-white">REDEK: INNOVACIÓN JURÍDICA GLOBAL • ODR • AI</p>
+            <p class="text-gray-300 text-xs mb-8">BOGOTÁ</p>
+            <div class="w-16 h-px bg-white/20 mx-auto mb-8"></div>
+            <a href="mailto:info@redek.co" class="text-white font-semibold hover:text-gray-300 transition-colors">info@redek.co</a>
+            <p class="mt-12 text-[10px] text-gray-400 uppercase tracking-widest">© 2026 REDEK LEGAL ENGINEERING. TODOS LOS DERECHOS RESERVADOS.</p>
         </div>
     </footer>
 
